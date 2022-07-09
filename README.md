@@ -24,13 +24,13 @@
 4. Components built until now:
     #### SimpleDropdown
        ##### Types
-       - **IDropdownProps** 
-        - Type used for props of dropdown.
-       - **IDropdownOption**
-        - Types used for options of dropdown.
+       **IDropdownProps** 
+       1. Type used for props of dropdown.
+       **IDropdownOption**
+       1. Types used for options of dropdown.
 
     #### Spinner
        ##### Types
-       - **ILoaderProps**
-        - Types used for props of spinner. 
+       **ILoaderProps**
+       1. Types used for props of spinner. 
 
