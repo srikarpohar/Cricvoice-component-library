@@ -1,0 +1,38 @@
+{
+  "name": "cricvoice-library",
+  "version": "1.0.0",
+  "description": "Library of components for cricvoice",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "keywords": [
+    "library",
+    "cricvoice"
+  ],
+  "author": "Pohar Srikar",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/react": "^18.0.14",
+    "autoprefixer": "^10.4.7",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.14",
+    "react": "^18.2.0",
+    "rollup": "^2.75.7",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^3.0.0",
+    "sass": "^1.53.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {}
+}
