@@ -1,27 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ILoaderProps } from "../../../types/loaders.types";
 import './spinner.component.scss';
 
-interface IProps{
-	show: boolean
-}
-
 interface IState{
-
+	open: boolean
 }
 
-const Spinner = (props: IProps) => {
-	const [state, setState] = useState<IState>({});
+const initialState: IState = {
+	open: false
+};
 
-	if(props.show) {
+const Spinner = (props: ILoaderProps) => {
+	const [state, setState] = useState<IState>(initialState);
+
+	useEffect(() => {
+		if(!props.show) {
+			setTimeout(() => {
+				setState({
+					open: false
+				})
+			}, 1000);
+		} else {
+			setState({
+				open: true
+			})
+		}
+	}, [props.show]);
+
+	if(state.open) {
 		return (<div className="screen">
-		<section className="stage">
+		<section className={`stage stage-${props.show ? 'open' : 'close'}`}>
 			<figure className="ball">
 				<span className="shadow"></span>
 				<span className="line"></span>
 			</figure>
 		</section>
 
-		<section className="ground">
+		<section className={`ground ground-${props.show ? 'open' : 'close'}`}>
 		</section>
 
 	</div>);

@@ -5,24 +5,24 @@ import typescript from "@rollup/plugin-typescript";
 import postcss from 'rollup-plugin-postcss';
 import dts from "rollup-plugin-dts";
 
+// for minifying js code
+import { terser } from "rollup-plugin-terser";
+// for updating react like dependencies to peer dependencies
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+
 const packageJson = require("./package.json");
 
 export default [
   {
-    input: ["src/index.ts",
-        // "src/components/dropdowns/simple-dropdown/simple-dropdown.tsx", 
-        // "src/components/loaders/spinner/spinner.component.tsx"
-    ],
+    input: ["src/index.ts"],
     output: [
       {
         file: packageJson.main,
-        // dir: 'dist',
         format: "cjs",
         sourcemap: true,
       },
       {
         file: packageJson.module,
-        // dir: 'dist',
         format: "esm",
         sourcemap: true,
       },
@@ -34,6 +34,8 @@ export default [
         //     failOnError: true,
         //     runtime: require('sass')
         //   }),
+
+        peerDepsExternal(),
         resolve(),
         commonjs(),
         typescript({ 
@@ -43,8 +45,10 @@ export default [
         postcss({
             modules: true,
             extract: true,
+            extensions: ['scss'],
             use: ['sass']
-        })
+        }),
+        terser()
     ],
   },
   {
