@@ -22,12 +22,12 @@
 3. Now you can import library components in your react components and use them with props.
 
 4. Components built until now:
-    #### SimpleDropdown
-       ##### Types
-       **IDropdownProps** 
-       1. Type used for props of dropdown.
-       **IDropdownOption**
-       1. Types used for options of dropdown.
+    1. SimpleDropdown
+       1. Types
+        1. IDropdownProps** 
+            1. Type used for props of dropdown.
+        2. IDropdownOption**
+            2. Types used for options of dropdown.
 
     #### Spinner
        ##### Types
